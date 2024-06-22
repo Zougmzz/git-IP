@@ -10,19 +10,19 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4  # 使用最新稳定版本
+      uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v5  # 使用最新稳定版本
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.10'  # 指定Python版本，可以根据需要调整
+        python-version: '3.10'
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
 
     - name: Run get_all_ips.py script
-      run: python get_all_ips.py  # 替换成你的Python脚本文件名，确保包含了获取IP地址并写入IP.ini文件的逻辑
+      run: python get_all_ips.py
         
     - name: Commit IP.ini
       env:
@@ -30,7 +30,7 @@ jobs:
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
-        git pull origin main  # 拉取远程主分支的最新更新
+        git pull origin main
         git add IP.ini
         git commit -m 'Update IP.ini with new IP addresses'
-        git push origin main --force  # 强制推送
+        git push origin main --force
