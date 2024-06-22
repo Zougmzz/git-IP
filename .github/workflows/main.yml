@@ -1,4 +1,4 @@
-name: Run get_all_ips script every 6 hours starting from 3:15
+name: Run get_all_ips script every 6 minutes
 
 on:
   schedule:
@@ -33,4 +33,4 @@ jobs:
         git pull origin main  # 拉取远程主分支的最新更新
         git add IP.ini
         git commit -m 'Update IP.ini with new IP addresses'
-        git push https://${{ secrets.GITHUB_TOKEN }}@github.com/Zougmzz/MagiskOnWSA.git main
+        git push https://${{ secrets.GITHUB_TOKEN }}@github.com/Zougmzz/MagiskOnWSA.git main --force  # 强制推送
