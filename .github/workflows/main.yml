@@ -1,4 +1,4 @@
-name: Run get_all_ips script every 6 minutes
+name: 定时更新 IP 地址
 
 on:
   schedule:
