@@ -1,4 +1,4 @@
-name: 定时更新 IP 地址
+name: 测试 更新 IP 地址
 
 on:
   schedule:
